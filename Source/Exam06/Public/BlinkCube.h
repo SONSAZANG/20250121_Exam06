@@ -25,7 +25,8 @@ protected:
 
 private:
 	FTimerHandle TimerHandle;
-	UPROPERTY(EditAnywhere, Category = "BlinkCube")
+	// 해당 변수는 SetTimer로 실행되서 처음 이후로 변하지 않습니다.
+	UPROPERTY(EditDefaultsOnly, Category = "BlinkCube")
 	float BlinkSpeed;
 	bool isActive;
 };
