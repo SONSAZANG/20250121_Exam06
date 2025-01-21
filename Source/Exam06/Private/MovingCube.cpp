@@ -7,9 +7,6 @@ AMovingCube::AMovingCube()
 	SceneRoot = CreateDefaultSubobject<USceneComponent>(TEXT("SceneRoot"));
 	StaticMeshComp = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMesh"));
 	StaticMeshComp->SetupAttachment(SceneRoot);
-
-	
-
 }
 
 void AMovingCube::BeginPlay()
@@ -25,7 +22,6 @@ void AMovingCube::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 	FVector Location = GetActorLocation();
 
-	
 	if (FMath::Abs(Location.X - GlobalStartLocation.X) > MaxRange) {
 		FVector Temp = GlobalTargetLocation;
 		GlobalTargetLocation = GlobalStartLocation;

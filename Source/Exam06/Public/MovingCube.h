@@ -1,5 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -14,14 +12,14 @@ class EXAM06_API AMovingCube : public AActor
 public:	
 	AMovingCube();
 
-	UPROPERTY(EditAnywhere, Category = "MovingCube")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MovingCube")
 	USceneComponent* SceneRoot;
-	UPROPERTY(EditAnywhere, Category = "MovingCube")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MovingCube")
 	UStaticMeshComponent* StaticMeshComp;
 
-	UPROPERTY(EditAnywhere, Category = "MovingCube")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MovingCube")
 	float MaxRange;
-	UPROPERTY(EditAnywhere, Category = "MovingCube")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MovingCube")
 	float MoveSpeed;
 
 private:
@@ -29,11 +27,9 @@ private:
 	FVector GlobalStartLocation;
 
 protected:
-	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
 };
